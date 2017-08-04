@@ -1,0 +1,7 @@
+<h1>You can edit the task here!</h1>
+<% form_for(@task) do |f| %>
+  <%= f.label :content, 'TASK' %>
+  <%= f/text_field :content %>
+  
+  <%= f.submit %>
+<% end %>

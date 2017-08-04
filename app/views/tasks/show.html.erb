@@ -1,0 +1,9 @@
+<h1>See datails of task id = <%= @task.id %></h1>
+
+<p>
+  <%= @task.content %>
+</p>
+
+<%= link_to 'Index page', root_path %>
+<%= link_to 'You can edit here!', edit_task_path(@task) %>
+<%= link_to 'You can delete here!', @task, method: :delete, data: { confirm: 'You do really?' } %>
