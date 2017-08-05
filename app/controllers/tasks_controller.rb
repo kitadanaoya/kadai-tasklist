@@ -12,7 +12,7 @@ class TasksController < ApplicationController
   end
   
   def create
-    @task = Task.find(task_params)
+    @task = Task.new(task_params)
     if @task.save
       flash[:success] = 'YOU SUCCESS TO MAKE NEW TASK!'
       redirect_to root_path
