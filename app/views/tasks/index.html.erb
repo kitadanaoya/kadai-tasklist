@@ -1,11 +1,34 @@
 <h1>See all of tasks!</h1>
 
-<ul>
-  <% @tasks.each do |task| %>
-  <li>
-    <%= link_to task.id, task %> : <%= task.status %> &gt; <%= task.content %>
-  </li>
-  <% end %>
-</ul>
+<%= render 'layouts/flash' %>
 
-<%= link_to 'Create New TASK', new_task_path %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>状況</th>
+      <th>内容</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tasks.each do |task| %>
+    <tr>
+      <td>
+        <%= link_to task.id, task %>
+      </td>
+      <td>
+        <%= task.status %>
+      </td>
+      <td>
+        <%= task.content %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div>
+  <%= paginate @tasks %>
+</div>
+
+<%= link_to 'Create New TASK', new_task_path, class: "btn btn-primary" %>
