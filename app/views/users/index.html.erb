@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="center jumbotron">
+    <div class="col-md-offset-3 col-md-6">
+      <h1>ユーザ一覧</h1>
+      
+      <% if users.any? %>
+        <% @users.each do |user| %>
+          <div class="media-left">
+            <img class="media-object" src="<%= gravatar_url(user, size: 50) %>">
+            <p><%= user.name %></p>
+          </div>
+        <% end %>
+      <% else %>
+        <p>まだユーザがいません...</p>
+      <% end %>
+    </div>
+  </div>
+</div>
