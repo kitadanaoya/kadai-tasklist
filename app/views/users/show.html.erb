@@ -1,2 +1,21 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="row">
+  <aside class="col-xs-4">
+    <div class="panel">
+      <div class="panel-title">
+        <h3><%= @user.name %></h3>
+      </div>
+        
+      <div class="panel-body">
+        <img class="media-object img-rounded" src="<%= gravatar_url(@user, { size: 50 }) %>" alt="">
+      </div>
+    </div>
+  </aside>
+  
+  <div class="col-xs-8">
+    <ul>
+      <li><%= link_to "Tasks", tasks_path %></li>
+      <li><a href="#">Followings</a></li>
+      <li><a href="#">Followers</a></li>
+    </ul>
+  </div>
+</div>

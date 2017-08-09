@@ -1,14 +1,8 @@
 <div class="row">
-  <% if @user.logged_in? %>
-  
-    <!--　ここに何かしらの構文を書く　 -->
-  
-  <% else %>
-  
+
     <div class="text-center jumbotron">
       <h1>Welcome to Tasklist!</h1>
       <%= link_to 'Sign Up', signup_path, class: "btn btn-primary" %>
     </div>
-  
-  <% end %>
+
 </div>

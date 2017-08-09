@@ -7,4 +7,5 @@ get 'signup' => 'users#new'
 get 'user' => 'users#show'
 
 resources :tasks
+resources :users
 end
