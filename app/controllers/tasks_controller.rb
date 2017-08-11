@@ -13,10 +13,10 @@ class TasksController < ApplicationController
   end
   
   def create
-    @task = Task.new(task_params)
+    @task = current_user.tasks.build(task_params)
     if @task.save
       flash[:success] = 'YOU SUCCESS TO MAKE NEW TASK!'
-      redirect_to root_path
+      redirect_to root_url
     else
       flash.now[:danger] = 'YOU COULDNT MAKE NEW TASK! PLS TRY AGAIN'
       render new_task_path
